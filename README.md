@@ -8,12 +8,19 @@
 **Table of Contents**
 
 - [Installation](#installation)
+- [Usage](#usage)
 - [License](#license)
 
 ## Installation
 
 ```console
 pip install cz-pydata
+```
+
+## Usage
+
+```console
+cz --name cz_pydata <command>
 ```
 
 ## License
