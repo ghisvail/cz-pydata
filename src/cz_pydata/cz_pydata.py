@@ -12,6 +12,24 @@ class PydataCz(BaseCommitizen):
     Use with `cz --name cz_pydata <command>`.
     """
 
+    bump_pattern = r"^(API|BUG|DEP|ENH|NEW|REM)"
+    bump_map = {
+        "API": "MAJOR",
+        "BUG": "PATCH",
+        "DEP": "MINOR",
+        "ENH": "MINOR",
+        "NEW": "MINOR",
+        "REM": "MINOR",
+    }
+    bump_map_major_version_zero = {
+        "API": "MINOR",
+        "BUG": "PATCH",
+        "DEP": "MINOR",
+        "ENH": "MINOR",
+        "NEW": "MINOR",
+        "REM": "MINOR",
+    }
+
     def questions(self) -> Questions:
         """Questions regarding the commit message.
 
