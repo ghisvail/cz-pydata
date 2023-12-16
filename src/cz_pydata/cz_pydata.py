@@ -99,14 +99,14 @@ class PydataCz(BaseCommitizen):
 
         Used by `cz example`.
         """
-        return "\n\n".join(["BUG: Fix regression in some feature", "Closes: #3456"])
+        return "BUG: Fix regression in some feature\n\nCloses: #3456"
 
     def schema(self) -> str:
         """Show the schema for the commit message.
 
         Used by `cz schema`.
         """
-        return "\n".join(["<acronym>: <summary>", "<BLANK LINE>", "<description>"])
+        return "<acronym>: <summary>\n<BLANK LINE>\n<description>"
 
     def info(self) -> str:
         """Show a detailed explanation of the commit rules.
