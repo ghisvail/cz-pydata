@@ -30,6 +30,25 @@ class PydataCz(BaseCommitizen):
         "REM": "MINOR",
     }
 
+    commit_parser = r"^(?P<change_type>\w+)[:\s]*(?P<message>.*)"
+    changelog_pattern = r"^(API|BUG|DEP|ENH|NEW|REM)"
+    change_type_map = {
+        "API": "BREAKING CHANGES",
+        "BUG": "Fixed",
+        "DEP": "Deprecated",
+        "ENH": "Changed",
+        "NEW": "Added",
+        "REM": "Removed",
+    }
+    change_type_order = [
+        "BREAKING CHANGES",
+        "Added",
+        "Changed",
+        "Deprecated",
+        "Removed",
+        "Fixed",
+    ]
+
     def questions(self) -> Questions:
         """Questions regarding the commit message.
 
