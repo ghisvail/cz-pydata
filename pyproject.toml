@@ -89,5 +89,6 @@ exclude_lines = [
 [tool.commitizen]
 name = "cz_pydata"
 version_provider = "pep621"
-major_version_zero = true
+changelog_incremental = true
 changelog_start_rev = "0.0.1"
+major_version_zero = true
