@@ -29,8 +29,17 @@ This plugin extends Commitizen to:
 
 ## Installation
 
+### Using pip
+
 ```console
 pip install cz-pydata
+```
+
+### Using pipx
+
+```console
+pipx install commitizen
+pipx inject commitizen cz-pydata
 ```
 
 ## Usage
