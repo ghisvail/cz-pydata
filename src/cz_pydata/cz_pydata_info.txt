@@ -33,6 +33,7 @@ NEW  : add a new feature
 REL  : release a new version
 REM  : remove a feature
 REV  : revert an earlier commit
+SEC  : security-related change
 STY  : style fix
 TST  : change to the test suite
 TYP  : static typing

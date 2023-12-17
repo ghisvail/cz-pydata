@@ -12,7 +12,7 @@ class PydataCz(BaseCommitizen):
     Use with `cz --name cz_pydata <command>`.
     """
 
-    bump_pattern = r"^(API|BUG|DEP|ENH|NEW|REM)"
+    bump_pattern = r"^(API|BUG|DEP|ENH|NEW|REM|SEC)"
     bump_map = {
         "API": "MAJOR",
         "BUG": "PATCH",
@@ -20,6 +20,7 @@ class PydataCz(BaseCommitizen):
         "ENH": "MINOR",
         "NEW": "MINOR",
         "REM": "MINOR",
+        "SEC": "PATCH",
     }
     bump_map_major_version_zero = {
         "API": "MINOR",
@@ -28,10 +29,11 @@ class PydataCz(BaseCommitizen):
         "ENH": "MINOR",
         "NEW": "MINOR",
         "REM": "MINOR",
+        "SEC": "PATCH",
     }
 
     commit_parser = r"^(?P<change_type>\w+)[:\s]*(?P<message>.*)"
-    changelog_pattern = r"^(API|BUG|DEP|ENH|NEW|REM)"
+    changelog_pattern = r"^(API|BUG|DEP|ENH|NEW|REM|SEC)"
     change_type_map = {
         "API": "BREAKING CHANGES",
         "BUG": "Fixed",
@@ -39,6 +41,7 @@ class PydataCz(BaseCommitizen):
         "ENH": "Changed",
         "NEW": "Added",
         "REM": "Removed",
+        "SEC": "Security",
     }
     change_type_order = [
         "BREAKING CHANGES",
@@ -47,6 +50,7 @@ class PydataCz(BaseCommitizen):
         "Deprecated",
         "Removed",
         "Fixed",
+        "Security",
     ]
 
     def questions(self) -> Questions:
@@ -73,6 +77,7 @@ class PydataCz(BaseCommitizen):
                     {"value": "REL", "name": "REL:   release a new version"},
                     {"value": "REM", "name": "REM:   remove a feature"},
                     {"value": "REV", "name": "REV:   revert an earlier commit"},
+                    {"value": "SEC", "name": "SEC:   security-related change"},
                     {"value": "STY", "name": "STY:   style fix"},
                     {"value": "TST", "name": "TST:   change to the test suite"},
                     {"value": "TYP", "name": "TYP:   static typing"},
