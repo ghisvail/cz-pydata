@@ -89,7 +89,7 @@ exclude_lines = [
 [tool.commitizen]
 name = "cz_pydata"
 version_provider = "pep621"
+update_changelog_on_bump = true
 bump_message = "REL: Release version $new_version"
 changelog_incremental = true
-changelog_start_rev = "0.0.1"
 major_version_zero = true
