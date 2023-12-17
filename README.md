@@ -35,8 +35,17 @@ pip install cz-pydata
 
 ## Usage
 
+To use this plugin with the Commitizen CLI:
+
 ```console
 cz --name cz_pydata <command>
+```
+
+To set the commit rules in your `pyproject.toml`:
+
+```toml
+[tool.commitizen]
+name = "cz_pydata"
 ```
 
 ## License
