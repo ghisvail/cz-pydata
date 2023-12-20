@@ -32,7 +32,7 @@ class PydataCz(BaseCommitizen):
         "SEC": "PATCH",
     }
 
-    commit_parser = r"^(?P<change_type>API|BUG|DEP|ENH|NEW|REM|SEC):?\s*(?P<message>.+)"
+    commit_parser = r"^(?P<change_type>API|BUG|DEP|ENH|NEW|REM|SEC)[:\s]+(?P<message>.+)"
     changelog_pattern = r"^(API|BUG|DEP|ENH|NEW|REM|SEC)"
     change_type_map = {
         "API": "BREAKING CHANGES",
