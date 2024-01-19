@@ -42,6 +42,18 @@ pipx install commitizen
 pipx inject commitizen cz-pydata
 ```
 
+### Using pre-commit
+
+```yaml
+# .pre-commit-config.yaml
+repos:
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: master  # TODO: Replace by latest version
+    hooks:
+      - id: commitizen
+        additional_dependencies: [ cz-pydata ]
+```
+
 ## Usage
 
 To use this plugin with the Commitizen CLI:
