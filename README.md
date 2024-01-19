@@ -62,12 +62,25 @@ To use this plugin with the Commitizen CLI:
 cz --name cz_pydata <command>
 ```
 
-To set the commit rules in your `pyproject.toml`:
+## Configuration
+
+You can configure your project to use these commit rules
+by adding the following settings in your `pyproject.toml`:
 
 ```toml
 [tool.commitizen]
 name = "cz_pydata"
 ```
+
+In addition, you may want to customize the commit message on version bumps
+to support the `REL` change type marker using:
+
+```toml
+bump_message = "REL: Release version $new_version"
+```
+
+Other configuration options are explained in the [Commitizen documentation](https://commitizen-tools.github.io/commitizen/config/).
+Feel free to have a look at this project Commitizen configuration and adapt it to your needs.
 
 ## License
 
