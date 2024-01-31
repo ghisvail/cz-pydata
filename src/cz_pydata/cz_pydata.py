@@ -123,6 +123,13 @@ class PydataCz(BaseCommitizen):
         """
         return "<acronym>: <summary>\n<BLANK LINE>\n<description>"
 
+    def schema_pattern(self) -> str:
+        """Return the schema pattern for the commit message.
+
+        Used by `cz check`.
+        """
+        return r"(API|BENCH|BLD|BUG|DEP|DEV|DOC|ENH|MAINT|NEW|REL|REM|REV|SEC|STY|TST|TYP):(\s.*)"
+
     def info(self) -> str:
         """Show a detailed explanation of the commit rules.
 
