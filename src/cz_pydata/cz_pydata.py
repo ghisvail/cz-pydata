@@ -32,7 +32,7 @@ class PydataCz(BaseCommitizen):
         "SEC": "PATCH",
     }
 
-    commit_parser = r"^\[?(?P<change_type>API|BUG|DEP|ENH|NEW|REM|SEC)\]?[:\s]+(?P<message>.+)"
+    commit_parser = r"^\[?(?P<change_type>API|BUG|DEP|ENH|NEW|REM|SEC)[\]:]?\s+(?P<message>.*)"
     changelog_pattern = r"^(API|BUG|DEP|ENH|NEW|REM|SEC)"
     change_type_map = {
         "API": "BREAKING CHANGES",
@@ -128,7 +128,7 @@ class PydataCz(BaseCommitizen):
 
         Used by `cz check`.
         """
-        return r"(API|BENCH|BLD|BUG|DEP|DEV|DOC|ENH|MAINT|NEW|REL|REM|REV|SEC|STY|TST|TYP):(\s.*)"
+        return r"^\[?(API|BENCH|BLD|BUG|DEP|DEV|DOC|ENH|MAINT|NEW|REL|REM|REV|SEC|STY|TST|TYP)[\]:]?\s+(.*)"
 
     def info(self) -> str:
         """Show a detailed explanation of the commit rules.
