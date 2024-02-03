@@ -81,6 +81,7 @@ class PydataCz(BaseCommitizen):
                     {"value": "STY", "name": "STY:   style fix"},
                     {"value": "TST", "name": "TST:   change to the test suite"},
                     {"value": "TYP", "name": "TYP:   static typing"},
+                    {"value": "WIP", "name": "WIP:   work-in-progress"},
                 ],
             },
             {
@@ -128,7 +129,7 @@ class PydataCz(BaseCommitizen):
 
         Used by `cz check`.
         """
-        return r"^\[?(API|BENCH|BLD|BUG|DEP|DEV|DOC|ENH|MAINT|NEW|REL|REM|REV|SEC|STY|TST|TYP)[\]:]?\s+(.*)"
+        return r"^\[?(API|BENCH|BLD|BUG|DEP|DEV|DOC|ENH|MAINT|NEW|REL|REM|REV|SEC|STY|TST|TYP|WIP)[\]:]?\s+(.*)"
 
     def info(self) -> str:
         """Show a detailed explanation of the commit rules.

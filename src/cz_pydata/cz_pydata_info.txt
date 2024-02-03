@@ -37,3 +37,4 @@ SEC  : security-related change
 STY  : style fix
 TST  : change to the test suite
 TYP  : static typing
+WIP  : work-in-progess
