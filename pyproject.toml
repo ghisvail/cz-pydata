@@ -36,6 +36,7 @@ dependencies = [
 ]
 
 [project.urls]
+Changelog = "https://github.com/ghisvail/cz-pydata#changelog"
 Documentation = "https://github.com/ghisvail/cz-pydata#readme"
 Issues = "https://github.com/ghisvail/cz-pydata/issues"
 Source = "https://github.com/ghisvail/cz-pydata"
