@@ -12,12 +12,13 @@ class PydataCz(BaseCommitizen):
     Use with `cz --name cz_pydata <command>`.
     """
 
-    bump_pattern = r"^(API|BUG|DEP|ENH|NEW|REM|SEC)"
+    bump_pattern = r"^(API|BUG|DEP|ENH|FIX|NEW|REM|SEC)"
     bump_map = {
         "API": "MAJOR",
         "BUG": "PATCH",
         "DEP": "MINOR",
         "ENH": "MINOR",
+        "FIX": "PATCH",
         "NEW": "MINOR",
         "REM": "MINOR",
         "SEC": "PATCH",
@@ -27,18 +28,20 @@ class PydataCz(BaseCommitizen):
         "BUG": "PATCH",
         "DEP": "MINOR",
         "ENH": "MINOR",
+        "FIX": "PATCH",
         "NEW": "MINOR",
         "REM": "MINOR",
         "SEC": "PATCH",
     }
 
-    commit_parser = r"^\[?(?P<change_type>API|BUG|DEP|ENH|NEW|REM|SEC)[\]:]?\s+(?P<message>.*)"
-    changelog_pattern = r"^(API|BUG|DEP|ENH|NEW|REM|SEC)"
+    commit_parser = r"^\[?(?P<change_type>API|BUG|DEP|ENH|FIX|NEW|REM|SEC)[\]:]?\s+(?P<message>.*)"
+    changelog_pattern = r"^(API|BUG|DEP|ENH|FIX|NEW|REM|SEC)"
     change_type_map = {
         "API": "BREAKING CHANGES",
         "BUG": "Fixed",
         "DEP": "Deprecated",
         "ENH": "Changed",
+        "FIX": "Fixed",
         "NEW": "Added",
         "REM": "Removed",
         "SEC": "Security",
@@ -129,7 +132,7 @@ class PydataCz(BaseCommitizen):
 
         Used by `cz check`.
         """
-        return r"^\[?(API|BENCH|BLD|BUG|DEP|DEV|DOC|ENH|MAINT|NEW|REL|REM|REV|SEC|STY|TST|TYP|WIP)[\]:]?\s+(.*)"
+        return r"^\[?(API|BENCH|BLD|BUG|DEP|DEV|DOC|ENH|FIX|MAINT|NEW|REL|REM|REV|SEC|STY|TST|TYP|WIP)[\]:]?" r"\s+(.*)"
 
     def info(self) -> str:
         """Show a detailed explanation of the commit rules.
