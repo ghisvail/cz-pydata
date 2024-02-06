@@ -132,7 +132,7 @@ class PydataCz(BaseCommitizen):
 
         Used by `cz check`.
         """
-        return r"^\[?(API|BENCH|BLD|BUG|DEP|DEV|DOC|ENH|FIX|MAINT|NEW|REL|REM|REV|SEC|STY|TST|TYP|WIP)[\]:]?" r"\s+(.*)"
+        return r"^\[?(API|BENCH|BLD|BUG|DEP|DEV|DOC|ENH|FIX|MAINT|MNT|NEW|REL|REM|REV|SEC|STY|TST|TYP|WIP)[\]:]?\s+(.*)"
 
     def info(self) -> str:
         """Show a detailed explanation of the commit rules.
